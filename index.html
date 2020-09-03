@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Case Study</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css" />
+   </head>
+   <body>
+      <div class="logo"></div>
+      <!--table bootstrap 4 -->
+      <div class="clearfix"></div>
+      <br>
+      <div class="container" style="">
+         <div class="right">                       
+            <p></p>
+            <div class="row list-vdb">
+               <div class="col-sm-3 biglogo">
+                  <div style="float: left">
+                     <img src="image/logo.png" width="140" height="100" alt="">
+                  </div>
+                  <div style="float: left">
+                     <h4 id="slogan">THIS IS<br> WHY <br> WE PLAY</h4>
+                  </div>
+               </div>
+               <!---------Tìm kiếm-------->
+               <div class="col-sm-9">
+                  <marquee scrollamount="8" width="100%">
+                     <h2 style="text-align: center;" id="title">Danh sách NBA  All Star 2020 <img src="image/icon.jfif" style="width: 65px; height: 40px;"></h2>
+                  </marquee> 
+                  <div class="row">
+                     <div class="col-sm-5 sologan" >
+                        <select class="form-control" id="searchteam" name="searchteam" style="width: 100%" style="float: right" onchange="searchTeam()">
+                           <option value="hihi">Chọn đội</option>
+                           <option value="1">Golden State Warriors</option>
+                           <option value="2">Chicago Bulls</option>
+                           <option value="3">Los Angeles Lakers</option>
+                           <option value="4">Oklahoma City Thunder</option>
+                           <option value="5">Los Angeles Clippers</option>
+                           <option value="6">San Antonio Spurs</option>
+                           <option value="7">Dallas Mavericks</option> 
+                           <option value="8">Houston Rockets</option>
+                           <option value="9">Milwaukee Bucks</option>
+                           <option value="10">Brooklyn Nets</option>
+                        </select></div>
+                     <div class="col-sm-7">
+                        <div class="input-group search" style="width: 100%; float: right;">
+                           <input type="text" id="key" name= "key"onkeyup="" onchange="" class="form-control" placeholder="Nhập tên vận động viên ...">
+                           <span class="input-group-btn">
+                           <button class="btn btn-secondary" onclick="searchATH()" type="button">Tìm kiếm</button>
+                           </span>
+                        </div>
+                     </div>
+                  </div>   
+               <!----------END------------>
+               </div>
+            </div>
+            <br />
+         </div>
+         <!-- Bảng hiển thị thông tin -->
+         <table id="TableSinhVien" class="table table-bordered" >
+            <thead>
+               <tr>
+                  <th></th>
+                  <th>#</th>
+                  <th>Ảnh</th>
+                  <th>Họ tên</th>
+                  <th>Quốc tịch</th>
+                  <th>Đội bóng hiện tại</th>
+                  <th>Vị trí</th>
+                  <th>Điểm trung bình</th>
+                  <th>Kiến tạo</th>
+                  <th>Rebound</th>
+               </tr>
+            </thead>
+            <tbody id="tbodyVDV">
+               <!------ Xử lý thông tin vđv--------->
+            </tbody>
+         </table>
+         <!-------------END------------->
+      </div>
+      <div class="alert " id="ThongBao">
+         <a title="Atlanta Hawks"><span><img src="image/logo/logo1.gif" alt="thanh"></span></a>
+         <a title="Boston Celtics"><span><img src="image/logo/logo2.gif"></span></a>
+         <a title="Brooklyn Nets"><span><img src="image/logo/logo3.gif"></span></a>
+         <a title="Charlotte Hornets"><span><img src="image/logo/logo4.gif"></span></a>
+         <a title="Chicago Bulls"><span><img src="image/logo/logo5.gif"></span></a>
+         <a title="Cleveland Cavaliers"><span><img src="image/logo/logo6.gif"></span></a>
+         <a title="Dallas Mavericks "><span><img src="image/logo/logo7.gif"></span></a>
+         <a title="Denver Nuggets"><span><img src="image/logo/logo8.gif"></span></a>
+         <a title="Detroit Pistons"><span><img src="image/logo/logo9.gif"></span></a>
+         <a title="Golden State Warriors"><span><img src="image/logo/logo10.gif"></span></a>
+         <a title="Houston Rockets "><span><img src="image/logo/logo11.gif"></span></a>
+         <a title="Los Angeles Clippers "><span><img src="image/logo/logo12.gif"></span></a>
+         <a title="Los Angeles Lakers"><span><img src="image/logo/logo13.gif"></span></a>
+         <a title="Milwaukee Bucks"><span><img src="image/logo/logo14.gif"></span></a>
+         <a title="San Antonio Spurs "><span><img src="image/logo/logo15.gif"></span></a>
+         <a title="Toronto Raptors"><span><img src="image/logo/logo16.gif"></span></a>
+         <a title="Portland Trail Blazers "><span><img src="image/logo/logo17.gif"></span></a>
+         <a title="Oklahoma City Thunder"><span><img src="image/logo/logo18.gif"></span></a>
+         <a title="Orlando Magic"><span><img src="image/logo/logo19.gif"></span></a>
+      </div>
+      <div class="container">
+         <h2 style="text-align: center;">Thông tin vận động viên</h2>
+         <!-- Form nhập và sử thông tin -->
+         <form> 
+            <div class="row">
+               <div class="col-sm-5">
+                  <div class="form-group" style="display: none;">
+                     <label for="idath"></label>
+                     <input type="text" class="form-control" id="idath" placeholder="id" name="idath">
+                  </div>
+                  <div class="form-group">
+                     <label for="name">Tên vận động viên:</label>
+                     <input type="text" class="form-control" id="name" placeholder="Nhập tên vận động viên" name="name">
+                  </div>
+                  <div class="form-group">
+                     <label for="img1">Ảnh</label>
+                     <input type="file" class="form-control" id="img1" name="img1">
+                  </div>
+                  <div class="form-group">
+                     <label for="nation">Quốc tịch</label>
+                     <input type="text" class="form-control" id="nation" placeholder="Nhập quốc tịch" name="nation">
+                  </div>
+                  <div class="form-group">
+                     <label for="team">Đội bóng hiện tại:</label>
+                     <select class="form-control" id="team" name="team" style="width: 50%">
+                        <option value="">Chọn đội</option>
+                        <option value="1">Golden State Warriors</option>
+                        <option value="2">Chicago Bulls</option>
+                        <option value="3">Los Angeles Lakers</option>
+                        <option value="4">Oklahoma City Thunder</option>
+                        <option value="5">Los Angeles Clippers</option>
+                        <option value="6">San Antonio Spurs</option>
+                        <option value="7">Dallas Mavericks</option>
+                        <option value="8">Houston Rockets</option>
+                        <option value="9">Milwaukee Bucks</option>
+                        <option value="10">Brooklyn Nets</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="col-sm-1 list-left"></div>
+               <div class="col-sm-5">
+                  <div class="form-group">
+                     <label for="position">Vị trí:</label>
+                     <select id="position" name="position" class="form-control" style="width: 50%;">
+                        <option value="" >Chọn vị trí</option>
+                        <option value="1" ><div style="background-color: red;">Hậu vệ dẫn bóng (PG)</div></option>
+                        <option value="2" >Hậu vệ ghi điểm (SG)</option>
+                        <option value="3">Tiền phong trụ (SF)</option>
+                        <option value="4">Tiền phong chính (PF)</option>
+                        <option value="5">Trung phong (C)</option>
+                     </select>
+                  </div>
+                  <div class="form-group">
+                     <label for="point">Điểm trung bình:</label>
+                     <input type="text" class="form-control" id="point" placeholder="Nhập điểm trung bình " name="point">
+                  </div>
+                  <div class="form-group">
+                     <label for="assist">Kiến tạo:</label>
+                     <input type="text" class="form-control" id="assist" placeholder="Nhập số kiến tạo" name="assist">
+                  </div>
+                  <div class="form-group">
+                     <label for="rebound">Rebound:</label>
+                     <input type="text" class="form-control" id="rebound" placeholder="Nhập số Rebound " name="rebound">
+                  </div>
+               </div>
+               <div class="col-sm-1"></div>
+            </div>
+            <div class="row" style="margin-top: 10px;">
+               <div class="col-sm-4"></div>
+               <div>
+                  <button type="button" class="btn btn-success" onclick="addAthh();">Thêm thông tin</button>
+                  <button type="button" class="btn btn-success" onclick="updateAthh();">Sửa thông tin</button>
+                  <button type="reset" class="btn btn-info" onclick="">Reset</button>
+               </div>
+            </div>
+         </form>
+         <!--------------END-------------->
+      </div>
+      <div class="button1">
+         <button class="btn btn-success" onclick="SetLocalStorage();">Lưu storage</button>
+         <button class="btn btn-primary" onclick="GetLocalStorage();">Lấy storage</button>
+         <button class="btn btn-secondary" onclick="DelLocalStorage();">Xóa storage</button>
+         <button class="btn btn-danger" onclick="DelAth();">Xóa thông tin</button>
+      </div>
+      <!-----------Js--------->
+      <script type="text/javascript" src="js/Athletes.js"></script>
+      <script type="text/javascript" src="js/athletesList.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+   </body>
+</html>
