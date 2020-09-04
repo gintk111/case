@@ -50,21 +50,27 @@ function addAthh() {
 		loi++;
 	}
 	if (checkNumber(point)) {
-		document.getElementById("point").style.border = "2px green solid";
+		document.getElementById("point").style.backgroundColor = "#555555";
+		document.getElementById("point").style.color = "#fff"
 	} else {
-		document.getElementById("point").style.border = "2px red solid" ;
+		document.getElementById("point").style.backgroundColor = "#333300" ;
+		document.getElementById("point").style.color = "#fff"
 		loi++;
 	}
 	if (checkNumber(assist)) {
-		document.getElementById("assist").style.border = "2px green solid";
+		document.getElementById("assist").style.backgroundColor = "#555555";
+		document.getElementById("assist").style.color = "#fff"
 	} else {
-		document.getElementById("assist").style.border = "2px red solid" ;
+		document.getElementById("assist").style.backgroundColor = "#333300" ;
+		document.getElementById("assist").style.color = "#fff"
 		loi ++;
 	}
 	if (checkNumber(rebound)) {
-		document.getElementById("rebound").style.border = "2px green solid";
+		document.getElementById("rebound").style.backgroundColor = "#555555";
+		document.getElementById("rebound").style.color = "#fff"
 	} else {
-		document.getElementById("rebound").style.border = "2px red solid" ;
+		document.getElementById("rebound").style.backgroundColor = "#333300" ;
+		document.getElementById("rebound").style.color = "#fff"
 		loi++;
 	}
 	// nếu có lỗi, dừng lại tại đây
@@ -85,11 +91,13 @@ function addAthh() {
 /*********** CHECK *****************/ 
 function checkRequired(id,value) {
 	if(Required(value)) {
-		document.getElementById(id).style.border = "2px red solid" ;
+		document.getElementById(id).style.backgroundColor = "#333300" ;
+		document.getElementById(id).style.color = "#fff	"
 		return true;
 	}
 	else {
-		document.getElementById(id).style.border = "2px green solid";
+		document.getElementById(id).style.backgroundColor = "#555555";
+		document.getElementById(id).style.color = "#fff	"
 		return false;
 	}
 }
