@@ -10,15 +10,15 @@ function getRandomColor(){
     let blue = getRandomHex();
 	return "rgb(" + red + "," + blue + "," + green +")";
 };
-/*********** END *****************/
+/**************** END *****************/
 
-/*********** ĐỔI MÀU THEO GIÂY *****************/
+/************** Color *****************/
 setInterval(function(){
     document.getElementById("slogan").style.color = getRandomColor();
-}, 50);
-/*********** END *****************/
+}, 100);
+/**************** END *****************/
 
-/*********** THÊM VẬN ĐỘNG VIÊN *****************/
+/*************** Add *****************/
 function addAthh() {
 	//Lấy dữ liệu nhập vào\
 	let id = athList.List.length;
@@ -32,7 +32,6 @@ function addAthh() {
 	let rebound = document.getElementById("rebound").value;	
 	let loi = 0;
 
-	//Ảnh (Đổi /C:\\fakepath\\/i thành rỗng)
 	image = image.replace(/C:\\fakepath\\/i, '');
 
 	/*********** VALIDATION *****************/
@@ -54,26 +53,28 @@ function addAthh() {
 		document.getElementById("point").style.color = "#fff"
 	} else {
 		document.getElementById("point").style.backgroundColor = "#333300" ;
-		document.getElementById("point").classList.add('your-class');		
+		document.getElementById("point").classList.add('your-class');	
+		document.getElementById("point").style.color = "#fff";	
 		loi++;
 	}
 	if (checkNumber(assist)) {
 		document.getElementById("assist").style.backgroundColor = "#555555";
-		document.getElementById("assist").style.color = "#fff"
+		document.getElementById("assist").style.color = "#fff";
 	} else {
 		document.getElementById("assist").style.backgroundColor = "#333300" ;
 		document.getElementById("assist").classList.add('your-class');
+		document.getElementById("assist").style.color = "#fff";
 		loi ++;
 	}
 	if (checkNumber(rebound)) {
 		document.getElementById("rebound").style.backgroundColor = "#555555";
-		document.getElementById("rebound").style.color = "#fff"
+		document.getElementById("rebound").style.color = "#fff";
 	} else {
 		document.getElementById("rebound").style.backgroundColor = "#333300" ;
 		document.getElementById("rebound").classList.add('your-class');
+		document.getElementById("rebound").style.color = "#fff";
 		loi++;
 	}
-	// nếu có lỗi, dừng lại tại đây
 	if (loi != 0) {
 		return;
 	}else {
@@ -88,7 +89,9 @@ function addAthh() {
 	updateathletesList(athList); // GỌI HÀM HIỂN THỊ
 	/*********** END *************/
 };
-/*********** CHECK *****************/ 
+/**************** END *****************/
+
+/************* CHECK *****************/ 
 function checkRequired(id,value) {
 	if(Required(value)) {
 		document.getElementById(id).style.backgroundColor = "#333300" ;
@@ -102,6 +105,8 @@ function checkRequired(id,value) {
 		return false;
 	}
 }
+/**************** END *****************/
+
 
 function Required(value) { // check rỗng
 	if(value.trim() === "") {
@@ -109,6 +114,7 @@ function Required(value) { // check rỗng
 		}
 	return false;
 }
+/**************** END *****************/
 
 function checkNumber(value) { // check số
 	let re = /^\d+$/; //dạng số
@@ -117,7 +123,7 @@ function checkNumber(value) { // check số
 	}
 	return false;
 }
-/*********** END *****************/
+/**************** END *****************/
 
 /*********** HIỂN THỊ *****************/
 function updateathletesList(value) {
@@ -164,13 +170,13 @@ function updateathletesList(value) {
 		trAth.appendChild(createRebound);
 		//thêm vào tbody
 		listTableVdv.appendChild(trAth);
-
 		checkboxtd.appendChild(labelCheckbox);
 		labelCheckbox.appendChild(setCheckBox);
 		labelCheckbox.appendChild(spanCheckbox);
 	}
 	
 }
+/**************** END *****************/
 
 function createTd (className, value) {
  	let td = document.createElement("td");
@@ -178,11 +184,14 @@ function createTd (className, value) {
  	td.innerHTML = value;
  	return td;
 }
-/*********** ẢNH *****************/
+
+/************* Image *****************/
 function createImg (value) {
 	let img = "<img src=" + "image/Athletes/" + value +">";
 	return img;
 }
+/**************** END *****************/
+
 /*********** LOGO *****************/
 function checklogo (value) {
 	if(value == 1) {
@@ -210,7 +219,9 @@ function checklogo (value) {
 	return value;
 	
 }
-/*********** VỊ TRÍ ***************/
+/**************** END *****************/
+
+/*************** VỊ TRÍ ***************/
 function checkposition (value) {
 	if (value == 1) {
 		value = "Hậu vệ dẫn bóng (PG)";
@@ -228,31 +239,34 @@ function checkposition (value) {
 	}
 	return value;
 }
-/*********** END *****************/
+/**************** END *****************/
 
-/********** Lưu mảng chứa các đối tượng vđv vào localstorage *****************/
+/********** Set Local Storage *********/
 function SetLocalStorage() {
 	let jsonathList = JSON.stringify(athList.List);//chuyển object athlist thành chuỗi json
 	localStorage.setItem("DanhsachVDV",jsonathList);
 }
-/***************************** END ****************************/
+/**************** END *****************/
 
-/********** Lấy dữ đối tượng vđv từ localstorage *****************/
+/********* Get local storage **********/
 function GetLocalStorage() {
 	let jsonathList = localStorage.getItem("DanhsachVDV");// lấy chuỗi json từ localstorage
 	let arrList = JSON.parse(jsonathList);
 	athList.List = arrList;
 	updateathletesList(athList);
 }
-/***************************** END ****************************/
+/*************** END ******************/
+
+/********** Delete locals torage ******/
 function DelLocalStorage() {
 	window.localStorage.removeItem('DanhsachVDV');
 	// athList.List = [{Name: 'Stephen Curry',Image: 'step.jpg',Nation: 'America', Team : 1, Position: 2, Point: 23.3, Assist: 13, Rebound: 5.5},{Name: 'Lebron James',Image: 'lebron.jpg',Nation: 'America', Team : 3, Position: 3, Point: 26, Assist: 10.3, Rebound: 6},{Name: 'Giannis Antetokounmpo',Image: 'giannis.jpg',Nation: 'Greece', Team : 9, Position: 4, Point: 27.4, Assist: 12.5, Rebound: 5.9}];
 	// let jsonathList = JSON.stringify(athList.List);//chuyển object athlist thành chuỗi json
 	// window.localStorage.setItem("DanhsachVDV",jsonathList);
 }
+/*************** END ******************/
 
-/***************** Xóa ******************/
+/***************** Xóa ****************/
 function DelAth() {
 	let listcheckbox = document.getElementsByClassName("checkboxx");
 	let listCheckTrue = [];///checked
@@ -272,6 +286,7 @@ function DelAth() {
 }
 /*************** End ******************/ 
 
+/*************** Add Form *************/
 function updateAth1(value) {
 	let vdv = athList.idAth(value);
 	if (vdv != null) {
@@ -286,6 +301,9 @@ function updateAth1(value) {
 
 	}
 }
+/*************** End ******************/ 
+
+/***************** Sửa ****************/
 function updateAthh() {
 	let id = document.getElementById("idath").value;
 	let name = document.getElementById("name").value;
@@ -339,7 +357,6 @@ function updateAthh() {
 	}else {
 		alert("Sửa thành công");
 	}
-	/*********** END *****************/
 
 	/********** THÊM DỐI TƯỢNG VĐV ***********/
 	let athletes = new Athletes(id, name, image, nation, team, position, point, assist, rebound)
@@ -348,6 +365,8 @@ function updateAthh() {
 	updateathletesList(athList); // GỌI HÀM HIỂN THỊ
 	/*********** END *************/
 }
+/***************** END ****************/
+
 /**************** Tìm kiếm ************/
 function searchATH() {
 	let keyword = document.getElementById("key").value;
@@ -356,14 +375,11 @@ function searchATH() {
 		return;
 	}
 	let listsearchvdv = athList.searchAth(keyword)
-	if (listsearchvdv == null) {
-		alert("Thành");
-	}
 	updateathletesList(listsearchvdv);
 }
 /*************** End ******************/
 
-/**************** Tìm kiếm theo team ************/
+/*************Tìm kiếm theo team *******/
 function searchTeam() {
 	let team = document.getElementById("searchteam").value;
 	let teamsearch = athList.searchteam(team)

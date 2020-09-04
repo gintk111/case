@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <title>Case Study</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="css/style.css" />
    </head>
    <body>
@@ -170,26 +171,24 @@
             <div class="row" style="margin-top: 10px;">
                <div class="col-sm-4"></div>
                <div>
-                  <button type="button" class="btn btn-success" onclick="addAthh();">Thêm thông tin</button>
-                  <button type="button" class="btn btn-success" onclick="updateAthh();">Sửa thông tin</button>
-                  <button type="reset" class="btn btn-info" onclick="">Reset</button>
+                  <button type="button" class="btn btn-success" onclick="addAthh();"><i class="fa fa-user-plus"></i> Add</button>
+                  <button type="button" class="btn btn-success" onclick="updateAthh();"><i class="fa fa-refresh fa-spin"></i> Update</button>
+                  <button type="reset" class="btn btn-info" onclick=""><i class="fa fa-refresh fa-spin"></i> Reset
+                  </button>
                </div>
             </div>
          </form>
          <!--------------END-------------->
       </div>
       <div class="button1">
-         <button class="btn btn-success" onclick="SetLocalStorage();">Lưu storage</button>
-         <button class="btn btn-primary" onclick="GetLocalStorage();">Lấy storage</button>
-         <button class="btn btn-secondary" onclick="DelLocalStorage();">Xóa storage</button>
-         <button class="btn btn-danger" onclick="DelAth();">Xóa thông tin</button>
+         <button class="btn btn-success" onclick="SetLocalStorage();"><i class="fa fa-cloud-download"></i> Set storage</button>
+         <button class="btn btn-primary" onclick="GetLocalStorage();"><i class="fa fa-cloud-upload"></i> Get storage</button>
+         <button class="btn btn-danger" onclick="DelLocalStorage();"><i class="fa fa-trash"></i></i> Delete storage</button>
+         <button class="btn btn-warning" onclick="DelAth();"><i class="fa fa-trash"></i></i> Delete</button>
       </div>
       <!-----------Js--------->
       <script type="text/javascript" src="js/Athletes.js"></script>
       <script type="text/javascript" src="js/athletesList.js"></script>
       <script type="text/javascript" src="js/main.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
    </body>
 </html>
