@@ -182,3 +182,6 @@ input,select, option {
   	-ms-transform: rotate(45deg);
   	transform: rotate(45deg);
 }
+.your-class::-webkit-input-placeholder {
+    color: #fff;
+ }

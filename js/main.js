@@ -54,7 +54,7 @@ function addAthh() {
 		document.getElementById("point").style.color = "#fff"
 	} else {
 		document.getElementById("point").style.backgroundColor = "#333300" ;
-		document.getElementById("point").style.color = "#fff"
+		document.getElementById("point").classList.add('your-class');		
 		loi++;
 	}
 	if (checkNumber(assist)) {
@@ -62,7 +62,7 @@ function addAthh() {
 		document.getElementById("assist").style.color = "#fff"
 	} else {
 		document.getElementById("assist").style.backgroundColor = "#333300" ;
-		document.getElementById("assist").style.color = "#fff"
+		document.getElementById("assist").classList.add('your-class');
 		loi ++;
 	}
 	if (checkNumber(rebound)) {
@@ -70,7 +70,7 @@ function addAthh() {
 		document.getElementById("rebound").style.color = "#fff"
 	} else {
 		document.getElementById("rebound").style.backgroundColor = "#333300" ;
-		document.getElementById("rebound").style.color = "#fff"
+		document.getElementById("rebound").classList.add('your-class');
 		loi++;
 	}
 	// nếu có lỗi, dừng lại tại đây
@@ -92,7 +92,8 @@ function addAthh() {
 function checkRequired(id,value) {
 	if(Required(value)) {
 		document.getElementById(id).style.backgroundColor = "#333300" ;
-		document.getElementById(id).style.color = "#fff	"
+		document.getElementById(id).classList.add('your-class');
+		document.getElementById(id).style.color = "#fff" ;
 		return true;
 	}
 	else {
