@@ -186,25 +186,25 @@ function createImg (value) {
 /*********** LOGO *****************/
 function checklogo (value) {
 	if(value == 1) {
-		value = "<img src=" + "image/logo/logo10.gif" + ">";
+		value = "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo10.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Golden State Warriors</div></div></div>";
 	} else if(value == 2) {
-		value = "<img src=" + "image/logo/logo5.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo5.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Chicago Bulls</div></div></div>";
 	}else if(value == 3) {
-		value = "<img src=" + "image/logo/logo13.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo13.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Los Angeles Lakers</div></div></div>";
 	}else if(value == 4) {
-		value = "<img src=" + "image/logo/logo18.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo18.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Oklahoma City Thunder</div></div></div>";
 	}else if(value == 5) {
-		value = "<img src=" + "image/logo/logo12.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo12.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Los Angeles Clippers</div></div></div>";
 	}else if(value == 6) {
-		value = "<img src=" + "image/logo/logo15.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo15.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>San Antonio Spurs</div></div></div>";
 	}else if(value == 7) {
-		value = "<img src=" + "image/logo/logo7.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo7.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Dallas Mavericks</div></div></div>";
 	}else if(value == 8) {
-		value = "<img src=" + "image/logo/logo11.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo11.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Houston Rockets </div></div></div>";
 	}else if(value == 9) {
-		value = "<img src=" + "image/logo/logo14.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo14.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Milwaukee Bucks</div></div></div>";
 	}else if(value == 10) {
-		value = "<img src=" + "image/logo/logo3.gif" + ">";
+		value =  "<div" + " class" + "='team'>"+"<img src=" + "image/logo/logo3.gif" + "><div" + " class" + "='overlay'><div" + " class" + "='text'>Brooklyn Nets</div></div></div>";
 	}
 
 	return value;

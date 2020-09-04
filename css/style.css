@@ -56,6 +56,9 @@ td {
 	border-radius: 10px;
 
 }
+.imagevdv img:hover {
+  transform: scaleX(-1);
+}
 .center {
 	text-align: center; 
 }
@@ -185,3 +188,45 @@ input,select, option {
 .your-class::-webkit-input-placeholder {
     color: #fff;
  }
+ .team {
+  position: relative;
+  width: 50%;
+}
+
+.imageicon {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  width: 100px;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 120px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #fff;
+}
+
+.athletes:hover  .overlay {
+  opacity: 1;
+}
+
+.text {
+  width: 120px;
+  color: white;
+  font-size: 20px;
+  font-style: italic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: black;
+}
